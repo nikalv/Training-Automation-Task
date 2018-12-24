@@ -1,4 +1,4 @@
-package org.softserve.testing;
+package org.softserve;
 
 import io.restassured.response.Response;
 import org.softserve.models.Address;

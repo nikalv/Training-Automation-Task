@@ -15,5 +15,9 @@
 
         </groups>
 
+        <packages>
+            <package name="org.softserve.*" />
+        </packages>
+
     </test>
 </suite>

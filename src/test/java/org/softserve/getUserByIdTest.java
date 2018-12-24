@@ -1,4 +1,4 @@
-package org.softserve.testing;
+package org.softserve;
 
 import io.restassured.response.Response;
 import org.softserve.models.User;
@@ -8,20 +8,22 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.List;
 
-public class verifyCountOfUsersTest {
+public class getUserByIdTest {
 
     @Test(groups = { "usertest"})
     public void getUserByIdTest() throws IOException {
-        Response response = HttpService.getUsers();
+        Response response = HttpService.getUserById(1);
         int statusCode = response.getStatusCode();
-
         Assert.assertEquals(statusCode, 200);
 
-        String usersListJSONInString = response.getBody().asString();
-        List<User> usersList = JsonParser.usersListFromJsonToObj(usersListJSONInString);
+        String userJSONInString = response.getBody().asString();
+        User user = JsonParser.userFromJsonToObj(userJSONInString);
 
-        Assert.assertTrue(usersList.size() > 5);
+        Assert.assertEquals(user.getName(), "Leanne Graham");
+        Assert.assertEquals(user.getUsername(), "Bret");
+        Assert.assertEquals(user.getAddress().getCity(), "Gwenborough");
+
     }
+
 }
