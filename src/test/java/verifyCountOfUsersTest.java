@@ -1,3 +1,5 @@
+package org.softserve.testing;
+
 import io.restassured.response.Response;
 import org.softserve.models.User;
 import org.softserve.services.HttpService;
@@ -10,7 +12,7 @@ import java.util.List;
 
 public class verifyCountOfUsersTest {
 
-    @Test()
+    @Test(groups = { "usertest"})
     public void getUserByIdTest() throws IOException {
         Response response = HttpService.getUsers();
         int statusCode = response.getStatusCode();

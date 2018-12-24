@@ -1,3 +1,5 @@
+package org.softserve.testing;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.softserve.models.Address;
 import org.softserve.models.Company;
@@ -9,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class updateInvalidUserTest {
 
-    @Test()
+    @Test(groups = { "usertest"})
     public void UpdateInvalidUserTest() throws JsonProcessingException {
         User user = new User("John", "Doe", "john.doe@gmail.com",
                 new Address("Main", "Apt. 111", "LA", "88000"), "133-33-33", "www.jd-ws.com",

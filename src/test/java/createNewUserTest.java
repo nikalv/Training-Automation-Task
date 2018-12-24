@@ -1,3 +1,5 @@
+package org.softserve.testing;
+
 import io.restassured.response.Response;
 import org.softserve.models.Address;
 import org.softserve.models.Company;
@@ -11,7 +13,7 @@ import java.io.IOException;
 
 public class createNewUserTest {
 
-    @Test()
+    @Test(groups = { "usertest"})
     public void createNewUserTest() throws IOException {
         User user = new User("", "", "",
                 new Address("", "", "", ""), "", "",

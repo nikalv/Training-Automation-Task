@@ -1,3 +1,5 @@
+package org.softserve.testing;
+
 import io.restassured.response.Response;
 import org.softserve.models.Address;
 import org.softserve.models.Company;
@@ -11,7 +13,7 @@ import java.io.IOException;
 
 public class updateValidUserTest {
 
-    @Test()
+    @Test(groups = { "usertest"})
     public void UpdateValidUserTest() throws IOException {
         User user = new User("John", "Doe", "john.doe@gmail.com",
                 new Address("Main", "Apt. 111", "LA", "88000"), "133-33-33", "www.jd-ws.com",
